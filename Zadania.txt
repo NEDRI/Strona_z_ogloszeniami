@@ -1,0 +1,2 @@
+Bazy danych:
+ 1 Zrobić model bazy danych na 15.04 (lub jakoś)
