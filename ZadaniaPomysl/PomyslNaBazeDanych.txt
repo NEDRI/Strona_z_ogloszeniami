@@ -1,5 +1,5 @@
 1 użytkownicy
-	- ID uzytkownika
+	+ ID uzytkownika
 	- nazwa uzytkownika
 	- emali
 	- haslo
@@ -12,19 +12,19 @@
 	- data stworzenia konta
 
 2 ogloszenie
-	- ID ogloszenia
+	+ ID ogloszenia
+	- ID uzytkownika
 	- nazwa / tytul ogloszenia
 	- data wystawina
 	- opis
 	- cena
 	- obraz itp. (url?)
-	- osoba oglaszajaca
 	- kategoraia (moze inna tabela)
 	- status
 	- ocena (ogolna?)
 
 3 ocena
-	- ID oceny
+	+ ID oceny
 	- ID uzytkownika
 	- ID ogloszenia
 	- ocena
@@ -32,5 +32,14 @@
 	- data stworzenia
 
 4 kategoraia
+	+ ID kategoraij
 	- typ
-	
+	- opis	
+
+5 czat
+	- ID uzytkownika (sprzedawca)
+	- ID uzytkownika (klient)
+	- ID ogloszenia
+	- wiadomosc
+	- wyslano (czas)
+

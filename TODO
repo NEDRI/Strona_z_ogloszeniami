@@ -1,0 +1,15 @@
+Podstawa:
+    Zaprojektowac baze danych
+    Wstepny wyglad storny:
+        1 tworzenie konta
+        2 logowanie 
+        3 strona podstawowa
+    funkcje:
+        1 tworzenie uzytkownika
+        2 logowanie uzytkownkiem
+        3 strona podstawowa pokazuje zalogowanie
+    Ogloszenia strona:
+        1 Strona ogloszenia
+        2 Tworzenie ogloszenia
+    Oglosznie funkcje
+    Wyszukiwarka

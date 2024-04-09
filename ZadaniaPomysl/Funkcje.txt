@@ -1,0 +1,8 @@
+1 tworzenie uzytkownika
+2 logowanie 
+3 podstawa strony
+4 strona do tworzenia ogloszeni 
+5 strona ogloszenia
+6 wyszukiwarka ogloszeni
+7 oceny
+8 czat pisemny
