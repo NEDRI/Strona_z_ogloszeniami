@@ -1,0 +1,36 @@
+1 użytkownicy
+	- ID uzytkownika
+	- nazwa uzytkownika
+	- emali
+	- haslo
+		(Moze inna tabela: addres)
+			- addres
+			- addres pocztowy
+			- miejscowosc
+			- kraj
+	- tel num
+	- data stworzenia konta
+
+2 ogloszenie
+	- ID ogloszenia
+	- nazwa / tytul ogloszenia
+	- data wystawina
+	- opis
+	- cena
+	- obraz itp. (url?)
+	- osoba oglaszajaca
+	- kategoraia (moze inna tabela)
+	- status
+	- ocena (ogolna?)
+
+3 ocena
+	- ID oceny
+	- ID uzytkownika
+	- ID ogloszenia
+	- ocena
+	- tekst
+	- data stworzenia
+
+4 kategoraia
+	- typ
+	
