@@ -1,4 +1,3 @@
-prototyp 1:
 Table users {
   id int [pk, increment]
   username varchar(50) [not null, unique]
