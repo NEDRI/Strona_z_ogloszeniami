@@ -1,6 +1,5 @@
 Table users {
   id int [pk, increment]
-  username varchar(50) [not null, unique]
   email varchar(100) [not null, unique]
   password varchar(100) [not null]
   phone_number varchar(20)
@@ -42,23 +41,12 @@ Table images {
   listing_id int [not null, ref: > listings.id]
 }
 
-Table messages {
-  id int [pk, increment]
-  sender_id int [not null, ref: > users.id]
-  receiver_id int [not null, ref: > users.id]
-  listing_id int [not null, ref: > listings.id]
-  message_text text
-  sent_at datetime [not null]
-  read_at datetime
-}
-
-
 Table reviews {
   id int [pk, increment]
   reviewer_id int [not null, ref: > users.id]
   reviewed_user_id int [not null, ref: > users.id]
   listing_id int [not null, ref: > listings.id]
-  rating int [not null] // 1-5
+  rating int [not null] 
   review_text text
   created_at datetime [not null]
 }
