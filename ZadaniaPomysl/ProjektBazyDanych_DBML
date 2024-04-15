@@ -44,7 +44,6 @@ Table images {
 Table reviews {
   id int [pk, increment]
   reviewer_id int [not null, ref: > users.id]
-  reviewed_user_id int [not null, ref: > users.id]
   listing_id int [not null, ref: > listings.id]
   rating int [not null] 
   review_text text
