@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="welcome-container">
-        <h2>Witaj, <?php echo $_SESSION['username']; ?>!</h2>
+        <h2>Witaj, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
         <h3>Ogłoszenia</h3>
         <div class="ads-table">
             <table>
