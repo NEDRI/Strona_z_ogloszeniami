@@ -1,3 +1,9 @@
+<?php 
+session_start(); 
+if ($_SESSION['username'] == "admin"){
+        header("Location: main/welcome.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
