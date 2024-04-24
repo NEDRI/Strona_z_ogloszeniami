@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($username === 'admin' && $password === 'admin123') {
         $_SESSION['username'] = $username;
-        header("Location: main/welcome.php");
+        header("Location: ../main/welcome.php");
         exit();
     } else {
         $error = "Wrong username or password";

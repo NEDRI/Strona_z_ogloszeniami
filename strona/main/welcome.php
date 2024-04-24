@@ -8,6 +8,11 @@
 </head>
 <body>
     <div class="welcome-container">
+        <div class="logout-container">
+            <form action="logout.php" method="post">
+                <input class="logout-btn" type="submit" value="Wyloguj">
+            </form>
+        </div>
         <h2>Witaj, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
         <h3>Ogłoszenia</h3>
         <div class="ads-table">
