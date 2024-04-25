@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ../login/login1.html");
+header("Location: ../login/login.php");
 exit();
 ?>
