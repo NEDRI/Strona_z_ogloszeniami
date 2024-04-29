@@ -23,16 +23,32 @@
         </div>    
         <h3>Advertisements:</h3>
         <div class="grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-            <div class="grid-item">6</div>
-            <div class="grid-item">7</div>
-            <div class="grid-item">8</div>
-            <div class="grid-item">9</div>
-            <div class="grid-item">10</div>
+        <?php
+        $advertisements = [
+            [
+                'photo' => 'photo1.jpg',
+                'name' => 'name1',
+                'price' => 100
+            ],
+            [
+                'photo' => 'photo2.jpg',
+                'name' => 'name2',
+                'price' => 200
+            ],
+            [
+                'photo' => 'photo3.jpg',
+                'name' => 'name3',
+                'price' => 300
+            ],
+        ];
+        foreach ($advertisements as $advertisement) {
+            echo '<div class="grid-item">';
+            echo '<img src="' . $advertisement['photo'] . '" alt="Advertisement photo">';
+            echo '<p>Name: ' . $advertisement['name'] . '</p>';
+            echo '<p>Price: ' . $advertisement['price'] . '</p>';
+            echo '</div>';
+        }
+        ?>
         </div>
     </div>
 </body>
