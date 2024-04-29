@@ -8,98 +8,31 @@
 </head>
 <body>
     <div class="welcome-container">
-        <div class="logout-container">
-            <form action="logout.php" method="post">
-                <input class="logout-btn" type="submit" value="Wyloguj">
-            </form>
-        </div>
-        <h2>Witaj, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
+        <div class="top-panel">
+            <div class="logout-container">
+                <form action="logout.php" method="post">
+                    <input class="logout-btn" type="submit" value="logout">
+                </form>
+            </div>
+            <div class="add-container">
+                    <input class="add-btn" type="submit" value="add">
+            </div>
+            <h2>Witaj, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
+        </div>    
         <h3>Ogłoszenia</h3>
         <div class="ads-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Zdjęcie</th>
-                        <th>Nazwa produktu</th>
-                        <th>Cena</th>
-                        <th>Stan</th>
-                        <th>Sprzedający</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Telefon komórkowy</td>
-                        <td>1200 PLN</td>
-                        <td>Nowy</td>
-                        <td>Jan Kowalski</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Laptop</td>
-                        <td>2500 PLN</td>
-                        <td>Używany</td>
-                        <td>Alicja Nowak</td>
-                    </tr>
-                    <!-- Dodaj więcej ogłoszeń -->
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Konsola do gier</td>
-                        <td>1500 PLN</td>
-                        <td>Używana</td>
-                        <td>Michał Wiśniewski</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Smartwatch</td>
-                        <td>800 PLN</td>
-                        <td>Nowy</td>
-                        <td>Katarzyna Nowak</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Telewizor LED</td>
-                        <td>3500 PLN</td>
-                        <td>Nowy</td>
-                        <td>Andrzej Kowalczyk</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Aparat fotograficzny</td>
-                        <td>2000 PLN</td>
-                        <td>Używany</td>
-                        <td>Marta Nowak</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Rowerek dziecięcy</td>
-                        <td>150 PLN</td>
-                        <td>Używany</td>
-                        <td>Anna Kowalska</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Głośniki Bluetooth</td>
-                        <td>250 PLN</td>
-                        <td>Nowe</td>
-                        <td>Mariusz Wiśniewski</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Książka "Wiedźmin"</td>
-                        <td>30 PLN</td>
-                        <td>Nowa</td>
-                        <td>Krzysztof Nowak</td>
-                    </tr>
-                    <tr>
-                        <td><img src="example_product_image.jpg" alt="Zdjęcie produktu"></td>
-                        <td>Krzesło biurowe</td>
-                        <td>200 PLN</td>
-                        <td>Używane</td>
-                        <td>Monika Kowalczyk</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">7</div>
+                <div class="grid-item">8</div>
+                <div class="grid-item">9</div>
+                <div class="grid-item">10</div>
+            </div>
         </div>
     </div>
 </body>
