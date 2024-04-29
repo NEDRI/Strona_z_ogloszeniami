@@ -2,7 +2,7 @@ Table users {
   id int [pk, increment]
   email varchar(100) [not null, unique]
   password varchar(100) [not null]
-  phone_number varchar(20)
+  phone_number varchar(15)
   created_at datetime [not null]
 }
 
@@ -37,7 +37,7 @@ Table listings {
 
 Table images {
   id int [pk, increment]
-  url varchar(255) [not null]
+  url varchar(500) [not null]
   listing_id int [not null, ref: > listings.id]
 }
 
@@ -45,7 +45,7 @@ Table reviews {
   id int [pk, increment]
   reviewer_id int [not null, ref: > users.id]
   listing_id int [not null, ref: > listings.id]
-  rating int [not null] 
+  rating int [not null, min: 1, max: 5]
   review_text text
   created_at datetime [not null]
 }
