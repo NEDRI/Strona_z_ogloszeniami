@@ -9,13 +9,15 @@
 <body>
     <div class="welcome-container">
         <div class="top-panel">
-            <div class="logout-container">
-                <form action="logout.php" method="post">
-                    <input class="logout-btn" type="submit" value="logout">
-                </form>
-            </div>
-            <div class="add-container">
+            <div class="button-container">
+                <div class="logout-container">
+                    <form action="logout.php" method="post">
+                        <input class="logout-btn" type="submit" value="logout">
+                    </form>
+                </div>
+                <div class="add-container">
                     <input class="add-btn" type="submit" value="add">
+                </div>
             </div>
             <h2>Witaj, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
         </div>    
