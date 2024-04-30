@@ -17,7 +17,7 @@
                     </form>
                 </div>
                 <div class="add-container">
-                    <form action="../add/add.php" method="post">
+                    <form action="../add/add.php">
                         <input class="add-btn" type="submit" value="add">
                     </form>
                 </div>
@@ -42,6 +42,11 @@
                     'photo' => '../photo/kaczka.jpg',
                     'name' => 'name3',
                     'price' => 300
+                ],
+                [
+                    'photo' => '../photo/tak.jpg',
+                    'name' => 'name4',
+                    'price' => 400
                 ],
             ];
             foreach ($advertisements as $advertisement) {

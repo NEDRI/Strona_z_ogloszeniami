@@ -36,11 +36,14 @@
                     <option value="3">Category 3</option>
                 </select><br><br>
                 <label for="status">Status:</label><br>
-                <select id="status" name="status" required>
+                <select id="status" name="status" onchange="DateForPending(value)" required>
                     <option value="active">Active</option>
                     <option value="pending">Pending</option>
                     <option value="sold">Sold</option>
-                </select><br><br>
+                </select><br>
+                <label for="date" id="date-label" style="display: none;">Date:</label><br>
+                <input type="date" id="date" name="date" style="display: none;">              
+                <br>
                 <label for="image">Image:</label><br>
                 <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage(event)"><br><br>
                 <img id="img-preview" src="#" alt="Image Preview" style="display: none; max-width: 200px; margin-top: 10px;"><br><br>
