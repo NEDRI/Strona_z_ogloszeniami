@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
     <div class="welcome-container">
@@ -16,7 +17,9 @@
                     </form>
                 </div>
                 <div class="add-container">
-                    <input class="add-btn" type="button" value="add">
+                    <form action="../add/add.php" method="post">
+                        <input class="add-btn" type="submit" value="add">
+                    </form>
                 </div>
             </div>
             <h2>Welcome, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
