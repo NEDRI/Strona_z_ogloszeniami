@@ -22,7 +22,7 @@
                     </form>
                 </div>
             </div>
-            <h2>Welcome, <?php session_start(); echo $_SESSION['username']; ?>!</h2>
+            <h2>Welcome, <?php session_start(); echo $_SESSION['email']; ?>!</h2>
         </div>    
         <h3>Advertisements:</h3>
         <div class="grid-container">

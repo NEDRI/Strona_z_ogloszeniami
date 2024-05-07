@@ -1,18 +1,19 @@
 <?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if ($username === 'admin' && $password === 'admin123') {
-        $_SESSION['username'] = $username;
-        header("Location: ../main/welcome.php");
+    if ($email === 'admin' && $password === 'admin123') {
+        $_SESSION['email'] = $email;
+        header("Location:../main/welcome.php");
         exit();
     } else {
-        $error = "Wrong username or password";
+        $error = "Wrong email or password";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,18 +27,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Welcome</h2>
         <form action="login.php" method="post">
             <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
             </div>
             <div class="input-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <?php if(isset($error)) { ?>
-                <p class="error"><?php echo $error; ?></p>
-            <?php } ?>
+            <?php if(isset($error)) {?>
+                <p class="error"><?php echo $error;?></p>
+            <?php }?>
             <button type="submit">login</button>
         </form>
+        <p>Don't have an account? <a href="../SignUp/signup.php">Sign up</a></p>
     </div>
 </body>
 </html>
