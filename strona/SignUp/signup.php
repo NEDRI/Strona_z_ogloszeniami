@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="input-group">
                 <label for="phone_number">Phone Number:</label>
-                <input type="text" id="phone_number" name="phone_number" required>
+                <input type="tel" id="phone_number" name="phone_number" pattern="[+]{1}[0-9]{11,14}" required>
             </div>
             <?php if(!empty($error)) {?>
                 <p class="error"><?php echo $error;?></p>
