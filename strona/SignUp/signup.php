@@ -4,6 +4,17 @@ session_start();
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "projekt";
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
@@ -12,10 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($password !== $confirm_password) {
         $error = "Passwords do not match";
     } else {
-        $user_data = "$email|$password|$phone_number" . PHP_EOL;
-        file_put_contents('users.txt', $user_data, FILE_APPEND);
-        header("Location: ../login/login.php");
-        exit();
+        $stmt = $conn->prepare("INSERT INTO users (email, password, phone_number, created_at) VALUES (?, ?, ?, NOW())");
+        $stmt->bind_param("sss", $email, $password, $phone_number);
+
+        if ($stmt->execute() === TRUE) {
+            header("Location: ../login/login.php");
+            exit();
+        } else {
+            $error = "Error: " . $conn->error;
+        }
+
+        $stmt->close();
+        $conn->close();
     }
 }
 ?>
@@ -34,19 +53,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="input-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
             <div class="input-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <div class="input-group">
                 <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Enter your password for confirm" required>
             </div>
             <div class="input-group">
                 <label for="phone_number">Phone Number:</label>
-                <input type="tel" id="phone_number" name="phone_number" pattern="[+]{1}[0-9]{11,14}" required>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number (e.g., 123-456-7890)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
             </div>
             <?php if(!empty($error)) {?>
                 <p class="error"><?php echo $error;?></p>
