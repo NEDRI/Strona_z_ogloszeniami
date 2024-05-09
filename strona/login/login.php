@@ -1,16 +1,35 @@
 <?php
 session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if ($email === 'admin' && $password === 'admin123') {
-        $_SESSION['email'] = $email;
-        header("Location:../main/welcome.php");
-        exit();
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "projekt";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $_SESSION['email'] = $email;
+            header("Location:../main/welcome.php");
+            exit();
+        }
     } else {
         $error = "Wrong email or password";
     }
+    $conn->close();
 }
 ?>
 
@@ -25,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="login-container">
         <h2>Welcome</h2>
-        <form action="login.php" method="post">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="input-group">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter your email" required>
