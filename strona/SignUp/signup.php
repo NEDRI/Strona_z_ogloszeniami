@@ -4,12 +4,12 @@ session_start();
 $error = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "projekt";
+    $dbservername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
+    $dbdbname = "projekt";
     
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
