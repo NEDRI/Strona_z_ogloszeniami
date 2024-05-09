@@ -43,11 +43,6 @@
                     'name' => 'name3',
                     'price' => 300
                 ],
-                [
-                    'photo' => '../photo/tak.jpg',
-                    'name' => 'name4',
-                    'price' => 400
-                ],
             ];
             foreach ($advertisements as $advertisement) {
                 echo '<div class="grid-item">';

@@ -6,12 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $dbservername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
     $dbname = "projekt";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
     $result = $conn->query($sql);
-
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $_SESSION['email'] = $email;
@@ -53,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <?php if(isset($error)) {?>
+            <?php 
+                if(isset($error)) {?>
                 <p class="error"><?php echo $error;?></p>
             <?php }?>
             <button type="submit">login</button>
