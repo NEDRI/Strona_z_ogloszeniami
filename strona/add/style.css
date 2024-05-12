@@ -32,7 +32,15 @@ body {
     display: flex;
 }
 
-.back-btn {
+.logout-container,
+.add-container {
+    margin-right: 10px;
+}
+
+.logout-btn,
+.add-btn,
+.back-btn,
+.add-form-container input[type="submit"] {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -45,7 +53,10 @@ body {
     transition: background-color 0.3s;
 }
 
-.back-btn:hover {
+.logout-btn:hover,
+.add-btn:hover,
+.back-btn:hover,
+.add-form-container input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -75,24 +86,6 @@ body {
     margin-bottom: 15px;
 }
 
-.add-form-container input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 0;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.add-form-container input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
 #img-preview {
     display: none;
     max-width: 200px;
@@ -103,4 +96,3 @@ body {
     max-width: 200px;
     margin-right: 10px;
 }
-

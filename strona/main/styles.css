@@ -18,8 +18,8 @@ h2 {
     text-align: center;
 }
 
-.back-btn {
-    background-color: #007bff;
+.logout-btn {
+    background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -31,7 +31,24 @@ h2 {
     cursor: pointer;
 }
 
-.back-btn:hover {
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+.add-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+.add-btn:hover {
     background-color: #0056b3;
 }
 
@@ -40,63 +57,41 @@ h2 {
     justify-content: space-between;
 }
 
-.add-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-textarea,
-input[type="number"],
-select,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
+.logout-container,
+.add-container {
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1px;
+    grid-gap: 5px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 1px;
+    font-size: 30px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
+.grid-item:hover {
+    /*
+    background-color: #007bff5e;
+    box-shadow: 0px 0px 20px 0px #007bff;
+    */
+    border: 5px; 
+    border-color: #007bff;
+    border-style: solid;
 }
 
-#img-preview {
+.grid-img {
     width: 100%;
-    margin-bottom: 20px;
-}
-
-#img-preview img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-#description_until {
-    display: none;
-}
-
-#description_until input[type="text"] {
-    margin-bottom: 0;
+    height: 60%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 3px;
 }

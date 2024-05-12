@@ -40,7 +40,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
     <div class="top-panel">
         <h2>Add Advertisement</h2>
         <div class="button-container">
-            <a href="#" class="back-btn">Back</a>
+            <a href="../main/welcome.php" class="back-btn">Back</a>
         </div>
     </div>
     <div class="add-form-container">
