@@ -33,6 +33,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Advertisement</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
@@ -80,39 +81,12 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
 
             <label for="image">Image:</label>
             <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
-            <div id="img-preview"></div>
+            <div id="img-preview" class="img-preview"></div>
 
             <input type="submit" name="submit" value="Submit">
         </form>
     </div>
 </div>
-
-<script>
-function previewImage(event) {
-    var reader = new FileReader();
-    reader.onload = function(){
-        var img = document.createElement("img");
-        img.src = reader.result;
-        var preview = document.getElementById("img-preview");
-        preview.innerHTML = '';
-        preview.appendChild(img);
-        preview.style.display = 'block';
-    }
-    reader.readAsDataURL(event.target.files[0]);
-}
-
-function showDescription() {
-    var status = document.getElementById("status").value;
-    var descriptionUntil = document.getElementById("description_until");
-
-    if (status === "pending") {
-        descriptionUntil.style.display = "block";
-    } else {
-        descriptionUntil.style.display = "none";
-    }
-}
-</script>
-
 </body>
 </html>
 
