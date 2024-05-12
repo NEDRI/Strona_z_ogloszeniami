@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dbservername = "localhost";
     $dbusername = "root";
     $dbpassword = "";
-    $dbdbname = "projekt";
+    $dbname = "projekt";
     
     $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -27,15 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($password !== $confirm_password) {
         $error = "Passwords do not match";
     } else {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
         $stmt = $conn->prepare("INSERT INTO users (email, password, phone_number, created_at) VALUES (?, ?, ?, NOW())");
-        $stmt->bind_param("sss", $email, $password, $phone_number);
+        $stmt->bind_param("sss", $email, $hashed_password, $phone_number);
 
         if ($stmt->execute() === TRUE) {
             $user_id = $conn->insert_id;
             $stmt = $conn->prepare("INSERT INTO addresses (user_id, street, city, postal_code, country) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("issss", $user_id, $street, $city, $postal_code, $country);
             if ($stmt->execute() === TRUE) {
-                header("Location: ../login/login.php");
+                header("Location:../login/login.php");
                 exit();
             } else {
                 $error = "Error: " . $conn->error;

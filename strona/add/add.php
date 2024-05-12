@@ -51,16 +51,16 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
 
             <label for="description">Description:</label>
             <textarea id="description" name="description" rows="4" required></textarea>
-
-            <label for="price">Price:</label>
-            <input type="number" id="price" name="price" step="0.01" required>
-
+            
             <label for="currency">Currency:</label>
             <select id="currency" name="currency" required>
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
                 <option value="PLN">PLN</option>
             </select>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
 
             <label for="category">Category:</label>
             <select id="category" name="category" required>
@@ -76,7 +76,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
 
             <div id="description_until" style="display: none;">
                 <label for="description_until">Description Until When:</label>
-                <input type="text" id="description_until" name="description_until">
+                <input type="text" id="description_until" placeholder="dd.mm.yy" name="description_until">
             </div>
 
             <label for="image">Image:</label>
@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
         }
 
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+            echo "<p>Added successfully</p>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

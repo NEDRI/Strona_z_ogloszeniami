@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
     $dbservername = "localhost";
     $dbusername = "root";
     $dbpassword = "";
@@ -17,17 +16,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $_SESSION['email'] = $email;
-            header("Location:../main/welcome.php");
-            exit();
+    $stmt = $conn->prepare("SELECT id, email, password FROM users WHERE email=?");
+    $stmt->bind_param("s", $email);
+
+    $stmt->execute();
+    $stmt->store_result();
+
+    $stmt->bind_result($user_id, $db_email, $db_password);
+
+    if ($stmt->num_rows > 0) {
+        while($stmt->fetch()) {
+            if (password_verify($password, $db_password)) {
+                $_SESSION['user_id'] = $user_id;
+                $_SESSION['email'] = $db_email;
+                header("Location:../main/welcome.php");
+                exit();
+            } else {
+                $error = "Wrong email or password";
+            }
         }
     } else {
         $error = "Wrong email or password";
     }
+
+    $stmt->close();
     $conn->close();
 }
 ?>
