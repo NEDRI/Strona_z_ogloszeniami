@@ -81,8 +81,8 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
             </select>
 
             <div id="description_until" style="display: none;">
-                <label for="description_until">Description Until When:</label>
-                <input type="text" id="description_until" placeholder="dd.mm.yy" name="description_until">
+                <label for="description_until_input">Description Until When:</label>
+                <input type="text" id="description_until_input" placeholder="dd.mm.yy" name="description_until_input">
             </div>
 
             <label for="image">Image:</label>
@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){
         $user_id = $row['id'];
 
         if ($status === 'pending') {
-            $description_until = $_POST['description_until'];
+            $description_until = $_POST['description_until_input'];
             $sql = "INSERT INTO listings (title, description, price, currency, user_id, category_id, status, created_at, description_until)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);

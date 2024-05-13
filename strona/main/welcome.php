@@ -56,6 +56,9 @@
                     echo '<p>Title: ' . $row['title'] . '</p>';
                     echo '<p>Description: ' . $row['description'] . '</p>';
                     echo '<p>Price: ' . $row['price'] . ' ' . $row['currency'] . '</p>';
+                    if ($row['description_until'] != NULL) {
+                        echo '<p>Until: ' . $row['description_until'] . '</p>';
+                    }
                     echo '</div>';
                 }
             } else {
