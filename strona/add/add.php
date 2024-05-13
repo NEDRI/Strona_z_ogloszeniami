@@ -138,11 +138,14 @@ if(isset($_POST['submit'])){
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                 $newfilename = $listing_id . '_' . $key . '.' . $imageFileType;
                 $target_file = $target_dir . $newfilename;
-                move_uploaded_file($_FILES["image"]["tmp_name"][$key], $target_file);
-                $sql = "INSERT INTO images (url, listing_id) VALUES (?, ?)";
-                $stmt = $conn->prepare($sql);
-                $stmt->bind_param("si", $newfilename, $listing_id);
-                $stmt->execute();
+                if (move_uploaded_file($_FILES["image"]["tmp_name"][$key], $target_file)) {
+                    $sql = "INSERT INTO images (url, listing_id) VALUES (?, ?)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("si", $newfilename, $listing_id);
+                    $stmt->execute();
+                } else {
+                    echo "Sorry, there was an error uploading your file.";
+                }
             }
             echo "<p>Added successfully</p>";
         } else {

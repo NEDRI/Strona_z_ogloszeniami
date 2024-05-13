@@ -17,9 +17,7 @@
                     </form>
                 </div>
                 <div class="add-container">
-                    <form action="../add/add.php">
-                        <input class="add-btn" type="submit" value="add">
-                    </form>
+                    <a href="../add/add.php" class="add-btn">Add</a>
                 </div>
             </div>
             <h2>Welcome, <?php session_start(); echo $_SESSION['email']; ?>!</h2>
@@ -38,15 +36,20 @@
                 die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT * FROM listings";
+            $sql = "SELECT listings.*, users.email, images.url AS image_url 
+                    FROM listings 
+                    LEFT JOIN users ON listings.user_id = users.id
+                    LEFT JOIN images ON listings.id = images.listing_id
+                    GROUP BY listings.id";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo '<div class="grid-item">';
-                    $imagePath = "add/uploads/" . $row['image'];
-                    if (file_exists($imagePath)) {
-                        echo '<img class="grid-img" src="' . $imagePath . '" alt="Advertisement photo">';
+                    if ($row['image_url']) {
+                        echo '<a href="mailto:' . $row['email'] . '">';
+                        echo '<img class="grid-img" src="uploads/' . $row['image_url'] . '" alt="Advertisement photo">';
+                        echo '</a>';
                     } else {
                         echo '<p>Image not found</p>';
                     }
