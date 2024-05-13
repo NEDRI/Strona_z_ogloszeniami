@@ -18,7 +18,24 @@ h2 {
     text-align: center;
 }
 
-.logout-btn,
+.logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
 .add-btn {
     background-color: #007bff;
     color: #fff;
@@ -33,7 +50,6 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.logout-btn:hover,
 .add-btn:hover {
     background-color: #0056b3;
 }
