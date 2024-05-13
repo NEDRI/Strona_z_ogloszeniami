@@ -27,30 +27,38 @@
         <h3>Advertisements:</h3>
         <div class="grid-container">
             <?php
-            $advertisements = [
-                [
-                    'photo' => '../photo/kaczka.jpg',
-                    'name' => 'name1',
-                    'price' => 100
-                ],
-                [
-                    'photo' => '../photo/test.png',
-                    'name' => 'name2',
-                    'price' => 200
-                ],
-                [
-                    'photo' => '../photo/kaczka.jpg',
-                    'name' => 'name3',
-                    'price' => 300
-                ],
-            ];
-            foreach ($advertisements as $advertisement) {
-                echo '<div class="grid-item">';
-                echo '<img class="grid-img" src="' . $advertisement['photo'] . '" alt="Advertisement photo">';
-                echo '<p>Name: ' . $advertisement['name'] . '</p>';
-                echo '<p>Price: ' . $advertisement['price'] . '</p>';
-                echo '</div>';
+            $dbservername = "localhost";
+            $dbusername = "root";
+            $dbpassword = "";
+            $dbdatabase = "projekt";
+
+            $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbdatabase);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
             }
+
+            $sql = "SELECT * FROM listings";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="grid-item">';
+                    $imagePath = "add/uploads/" . $row['image'];
+                    if (file_exists($imagePath)) {
+                        echo '<img class="grid-img" src="' . $imagePath . '" alt="Advertisement photo">';
+                    } else {
+                        echo '<p>Image not found</p>';
+                    }
+                    echo '<p>Title: ' . $row['title'] . '</p>';
+                    echo '<p>Description: ' . $row['description'] . '</p>';
+                    echo '<p>Price: ' . $row['price'] . ' ' . $row['currency'] . '</p>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No advertisements found";
+            }
+            $conn->close();
             ?>
         </div>
     </div>
