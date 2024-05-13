@@ -50,7 +50,7 @@ INSERT INTO `categories` (`id`, `name`, `description`, `parent_category_id`) VAL
 (23, 'Gaming', 'Video games, consoles, and gaming accessories', NULL),
 (24, 'Collectibles', 'Rare and unique collectible items', NULL),
 (25, 'Jewelry', 'Rings, necklaces, bracelets, and other jewelry items', NULL),
-(26, 'Other', 'Other categories', NULL); -- Dodana kategoria "Other"
+(26, 'Other', 'Other categories', NULL); 
 
 CREATE TABLE listings (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,7 +63,7 @@ CREATE TABLE listings (
   status ENUM('active', 'pending', 'sold') NOT NULL DEFAULT 'active',
   created_at DATETIME NOT NULL,
   updated_at DATETIME,
-  description_until DATE, -- Dodana kolumna
+  description_until DATE, 
   FOREIGN KEY (user_id) REFERENCES users(id),
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
