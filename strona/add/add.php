@@ -13,8 +13,13 @@ if ($conn->connect_error) {
 }
 
 function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
-    $sql = "SELECT * FROM categories WHERE parent_category_id " . ($parent_id ? "= $parent_id" : "IS NULL");
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM categories WHERE parent_category_id " . ($parent_id ? "= ?" : "IS NULL");
+    $stmt = $conn->prepare($sql);
+    if ($parent_id) {
+        $stmt->bind_param("i", $parent_id);
+    }
+    $stmt->execute();
+    $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -22,6 +27,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
             getCategories($conn, $row["id"], $sub_mark.'-');
         }
     }
+    $stmt->close();
 }
 
 ?>
@@ -80,10 +86,10 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
             </div>
 
             <label for="image">Image:</label>
-            <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" required>
+            <input type="file" id="image" name="image[]" accept="image/*" onchange="previewImage(event)" multiple required>
             <div id="img-preview" class="img-preview"></div>
 
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit" id="submit-btn">
         </form>
     </div>
 </div>
@@ -92,8 +98,8 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
 
 <?php
 if(isset($_POST['submit'])){
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    $title = htmlspecialchars($_POST['title']);
+    $description = htmlspecialchars($_POST['description']);
     $price = $_POST['price'];
     $currency = $_POST['currency'];
     $user_email = $_SESSION['email'];
@@ -101,8 +107,11 @@ if(isset($_POST['submit'])){
     $status = $_POST['status'];
     $created_at = date('Y-m-d H:i:s');
 
-    $sql = "SELECT id FROM users WHERE email = '$user_email'";
-    $result = $conn->query($sql);
+    $sql = "SELECT id FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $user_email);
+    $stmt->execute();
+    $result = $stmt->get_result();
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -111,13 +120,30 @@ if(isset($_POST['submit'])){
         if ($status === 'pending') {
             $description_until = $_POST['description_until'];
             $sql = "INSERT INTO listings (title, description, price, currency, user_id, category_id, status, created_at, description_until)
-                    VALUES ('$title', '$description', '$price', '$currency', '$user_id', '$category_id', '$status', '$created_at', '$description_until')";
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssdsiisss", $title, $description, $price, $currency, $user_id, $category_id, $status, $created_at, $description_until);
         } else {
             $sql = "INSERT INTO listings (title, description, price, currency, user_id, category_id, status, created_at)
-                    VALUES ('$title', '$description', '$price', '$currency', '$user_id', '$category_id', '$status', '$created_at')";
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssdsiiss", $title, $description, $price, $currency, $user_id, $category_id, $status, $created_at);
         }
 
-        if ($conn->query($sql) === TRUE) {
+        if ($stmt->execute()) {
+            $listing_id = $conn->insert_id;
+            $target_dir = "../uploads/";
+            foreach($_FILES['image']['name'] as $key=>$val){
+                $target_file = $target_dir . basename($_FILES["image"]["name"][$key]);
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                $newfilename = $listing_id . '_' . $key . '.' . $imageFileType;
+                $target_file = $target_dir . $newfilename;
+                move_uploaded_file($_FILES["image"]["tmp_name"][$key], $target_file);
+                $sql = "INSERT INTO images (url, listing_id) VALUES (?, ?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("si", $newfilename, $listing_id);
+                $stmt->execute();
+            }
             echo "<p>Added successfully</p>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
