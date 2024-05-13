@@ -48,7 +48,7 @@
                     echo '<div class="grid-item">';
                     if ($row['image_url']) {
                         echo '<a href="mailto:' . $row['email'] . '">';
-                        echo '<img class="grid-img" src="uploads/' . $row['image_url'] . '" alt="Advertisement photo">';
+                        echo '<img class="grid-img" src="../uploads/' . $row['image_url'] . '" alt="Advertisement photo">';
                         echo '</a>';
                     } else {
                         echo '<p>Image not found</p>';
