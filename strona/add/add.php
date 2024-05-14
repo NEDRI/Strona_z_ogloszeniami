@@ -86,7 +86,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
             </div>
 
             <label for="image">Image:</label>
-            <input type="file" id="image" name="image[]" accept="image/*" onchange="previewImage(event)" multiple required>
+            <input type="file" id="image" name="image[]" accept="image/*" onchange="previewImage(event)" required>
             <div id="img-preview" class="img-preview"></div>
 
             <input type="submit" name="submit" value="Submit" id="submit-btn">
