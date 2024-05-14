@@ -147,7 +147,7 @@ if(isset($_POST['submit'])){
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
-            echo "<p>Added successfully</p>";
+            echo "<p id='news'>Added successfully</p>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
