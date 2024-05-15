@@ -82,7 +82,7 @@ function getCategories($conn, $parent_id = NULL, $sub_mark = ''){
 
             <div id="description_until" style="display: none;">
                 <label for="description_until_input">Description Until When:</label>
-                <input type="text" id="description_until_input" placeholder="dd.mm.yy" name="description_until_input">
+                <input type="date" id="description_until_input" placeholder="dd.mm.yy" name="description_until_input">
             </div>
 
             <label for="image">Image:</label>

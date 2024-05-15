@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 403 Brak dostępu do strony</title>
+  </head>
+  <body>
+
+    <section class="section section--landing-hero content landing-hero-image">
+
+      <div class="container logo">
+        <span class="header__logo">
+          <p style="font-size: 11px; text-align: center;" id="text_5">Strona utrzymywana na serwerach</p>
+         <a href="https://cyberfolks.pl">
+          <svg enable-background="new 0 0 253 37.7" viewBox="0 0 253 37.7" xmlns="http://www.w3.org/2000/svg">
+          <path d="m251.3.2-1 2.7-.6 1.9h-.1l-.6-1.9-1.1-2.7h-1.7v7.3h1.3v-3.2l-.2-2.5h.1l1.7 4.4h1l1.7-4.4h.1l-.2 2.5v3.2h1.3v-7.3zm-12 1.3h2.2v6h1.4v-6h2.2v-1.3h-5.9zm-130.3 8.2c-1.3-.7-2.7-1.1-4.2-1.1-2.7 0-5.4 1.3-7.4 3.7l-.2-3.3h-3.5v20.1h3.7v-12.8c1.7-2.7 3.6-4.4 6.4-4.4 1.4 0 2.8.4 4.1 1zm-98 16.9c-4.1 0-7.3-2.9-7.3-7.4s3.2-7.5 7.3-7.5c2 0 4 .8 5.5 2.2l1.8-2.3c-2.1-1.9-4.7-2.9-7.5-2.9-5.5-.1-10.8 3.9-10.8 10.5s5.3 10.4 10.8 10.5c3 0 5.8-1.1 8-3.1l-1.7-2.4c-1.5 1.3-3.6 2.4-6.1 2.4m45.4-17.9c-2.5 0-4.7 1-6.7 2.9l.1-5v-5.8h-3.7v28.4h3.1l.2-2.2c1.6 1.7 3.8 2.7 6.2 2.7 4.7.1 9-3.9 9-10.8.1-6.2-3.3-10.2-8.2-10.2m-1.3 17.8c-1.5 0-3.4-.5-5.2-2.2v-9.7c2.1-2.3 4.1-2.9 5.7-2.9 3.2 0 5.4 2.6 5.4 7.2-.1 4.8-2.6 7.7-5.9 7.6m-22.7-1.6-6.9-15.8h-4l9.2 19.9-.6 1.7c-1 2.3-2.6 4-5.3 4-.6 0-1.2-.1-1.8-.3l-.8 2.9c.9.3 1.8.4 2.8.4 4.6 0 7-3 8.6-7l8.7-21.6h-3.8zm46.6-16.2c-5.3 0-10 3.9-10 10.5s4.6 10.5 10.8 10.5c2.8 0 5.6-.8 7.9-2.4l-1.4-2.4c-1.8 1.2-3.6 1.9-6 1.9-4.1 0-7.1-2.1-7.6-6.5h15.5c.2-.7.3-1.4.2-2.2.1-5.7-4.1-9.4-9.4-9.4m-6.2 8.7c.6-3.6 3-5.9 6.2-5.9 3.1 0 5.6 2 6 5.9zm136.2.8 7.2-6.8c1.7-1.6-.7-4-2.4-2.3l-10.1 9.6v-16.8c0-1-.8-1.9-1.9-1.9-1 0-1.9.8-1.9 1.9v26c0 1 .8 1.9 1.9 1.9 1 0 1.9-.8 1.9-1.9v-4.6l2.9-2.7 7.9 8.4c1.7 1.8 4.3-.5 2.5-2.3zm-15.4 7.6c-.9 0-1.6.7-3.2.7-2.3 0-3.5-1.5-3.5-4v-20.3c0-.8-.6-1.4-1.4-1.4h-6.4c-.9 0-1.6.7-1.6 1.6 0 .9.7 1.6 1.6 1.6h4.1v18.3c0 4.6 2.4 7.4 6.9 7.4 2.5 0 5.2-.8 5.2-2.4-.2-.8-.9-1.5-1.7-1.5m-39.2-25h-14.5c-.9 0-1.6.7-1.6 1.6v25.4c0 1 .9 1.9 1.9 1.9s1.9-.8 1.9-1.9v-11.6h9.1c.9 0 1.6-.7 1.6-1.6s-.7-1.6-1.6-1.6h-9.1v-9h12.3c.9 0 1.6-.7 1.6-1.6s-.7-1.6-1.6-1.6zm-24.5 31.2h-23.7v3.1h23.7c.9 0 1.6-.7 1.6-1.6 0-.8-.7-1.5-1.6-1.5.1 0 .1 0 0 0m36.8-23.3c-6.4 0-10.4 4.9-10.3 10.5-.1 5.7 3.9 10.5 10.3 10.5 6.3 0 10.1-4.9 10.2-10.5.2-5.6-3.9-10.5-10.2-10.5m0 17.7c-4 0-6.5-3.2-6.5-7.3 0-4 2.5-7.2 6.5-7.2 3.9 0 6.4 3.3 6.4 7.2 0 4.1-2.5 7.3-6.4 7.3m63.9-8.9c-3.6-.8-5.3-1.7-5.3-3.3 0-3.2 6-3 9.4-1 1.9 1.1 3.4-1.3 1.4-2.6-1.7-1.1-4.3-1.9-7.1-1.9-5.2 0-7.3 2.9-7.3 5.6 0 1.9 1.1 4.6 5.1 5.8 3.8 1 7.6 1.3 7.6 3.8 0 1.7-1.8 2.9-4.7 2.9-2.3 0-4.6-.9-6.4-2.3-1.7-1.3-3.9.4-2.1 2.3 1.2 1.4 5 3.1 8.6 3.1 4.4 0 8.1-2.3 8.2-6.2.1-4.3-3.7-5.4-7.4-6.2"
+            fill="#3d403b"
+          />
+        </svg>
+         </a>
+        </span>
+      </div>
+      
+      <div class="container">
+        <div class="column__content--left">
+          <span style="font-size: 35px; font-weight: 600;" id="text_6">Błąd 403</span>
+          <h1 class="landing-hero__title" id="text_1">
+            Stop!
+          </h1>
+          <p class="landing-hero__description" id="text_2">
+          Wszystko wskazuje na to, że nie posiadasz odpowiednich uprawnień by przejść dalej. <br><br>
+ Jeżeli uważasz, że powinieneś mieć dostęp do witryny – skontaktuj się z jej administratorem! 
+          </p>
+          <div class="landing-hero__btn">
+            <a href="https://cyberfolks.pl/pomoc/blad-403/" target="blank" class="btn--yellow" id="text_3">Więcej informacji</a>
+
+          </div>
+        </div>
+        <div class="column__content--right">
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section--landing-hero footer">
+   <span class="container" id="text_4">Więcej informacji o błędzie 403 znajdziesz w artykule <a href="https://cyberfolks.pl/pomoc/blad-403/" target="blank">Błędy 403 skąd sie biorą?</a><br> Zajrzyj do naszej pomocy, gdzie znajdziesz wiele przydatnych artykułów:  <a href="https://cyberfolks.pl/pomoc">pomoc cyber_Folks</a></span>
+    </section>
+
+<style>
+      body,header{border-top:6px solid #ffcd02}.section--landing-hero,header{background-color:rgb(247 247 247)}body,html{background:rgb(247 247 247);margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:#3c3d38}*,::after,::before{box-sizing:border-box}body{display:flex;flex-direction:column;min-height:100vh;justify-content:space-between}header .container{display:flex;justify-content:space-between}section.section.section--landing-hero.footer{color:#a0a0a0;background:#3c3d38;padding:20px 0;min-height:85px;display:flex;flex-direction:column;gap:7px;justify-content:center}section.section.section--landing-hero.footer .container{display:block;text-align:center;font-size:15px}section.section.section--landing-hero.footer a{color:#ffcd02;text-decoration:none;margin-left:5px}section.section.section--landing-hero.content{flex:1;display:flex;flex-direction:column;justify-content:center}.header__logo svg{width:200px}.section--landing-hero{padding-bottom:0}.section--landing-hero .container{width:100%;display:flex}.section--landing-hero .container.logo{padding-bottom:95px}.column__content--left{display:flex;flex-direction:column;width:50%;padding-right:50px}.column__content--right{padding-left:50px;align-items:flex-start}.landing-hero__title{font-size:140px;font-weight:600;letter-spacing:0;line-height:160px;margin-top:0;margin-bottom:24px;max-width:665px}.landing-hero__title .yellow{color:#ffcd02}.landing-hero__description{font-size:16px;letter-spacing:0;line-height:24px;margin-bottom:42px;margin-top:0}.landing-hero__description a{color:#ffcd02;font-weight:700}.landing-hero__btn{display:flex;flex-direction:column;align-items:flex-start}.btn--yellow,.header__links{align-items:center;display:flex}.landing-hero__btn span{font-size:16px;font-weight:700;letter-spacing:0;line-height:24px;margin-bottom:24px}.btn--yellow{padding:22px 48px;text-transform:uppercase;background-color:#ffcd02;justify-content:center;color:#3c3d38;font-family:Arial;font-size:16px;font-weight:700;line-height:18px;text-decoration:none;transition:.2s ease-in-out;cursor:pointer}.btn--yellow:hover{background-color:#ffbd00}.header__links>a{display:flex;align-items:center;text-decoration:none}.header__links>a:hover .link__text{color:#ffcd02}.header__links>a:last-of-type{margin-left:80px}.header__links>a .link__text{color:#3c3d38;font-family:Arial;font-size:16px;letter-spacing:0;line-height:22px;margin-left:8px;transition:color .2s}.mobile-show{display:none}@media screen and (min-width:1024px){.container{padding:0 100px;max-width:900px;margin:0 auto}}@media screen and (min-width:1280px){.container{padding:0 100px;max-width:1065px;margin:0 auto}}@media screen and (max-width:1279px) and (min-width:1200px){.container{padding:0 50px}}.container{padding:0 30px}@media screen and (max-width:1199px){.landing-hero__title{font-size:140px;font-weight:600;letter-spacing:0;line-height:140px;max-width:100%}}section.landing-hero-image{background-repeat:no-repeat,no-repeat;background-position:top right;background-size:auto 90%}.column__content--right{max-width:527px;margin-left:auto;width:100%;object-fit:contain;display:none;height:100px;background-size:auto 100px;background-repeat:no-repeat;background-position:right}@media screen and (max-width:991px){.column__content--right{display:block}section.landing-hero-image{background-image:unset}.landing-hero__title{font-size:73px;line-height:73px}}@media screen and (max-width:767px){body{justify-content:start}.section--landing-hero .container.logo{padding-bottom:25px}.section--landing-hero{padding:80px 0}.header__links>a:last-of-type{margin-left:30px}.section--landing-hero>.container{flex-wrap:wrap}.column__content--right{width:100%;padding:0;margin-top:30px}.column__content--left{width:100%;padding-right:0}.column__content--right img{margin:0 auto}}@media screen and (max-width:580px){.mobile-show{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%}.column__content--right,.header__links{display:flex!important}.landing-hero__btn{margin-bottom:24px}.mobile-show a{color:#3c3d38;font-family:Arial;font-size:16px;letter-spacing:0;line-height:22px;margin-bottom:15px;text-decoration:none}.mobile-show a:focus,.mobile-show a:hover{color:#ffcd02}.btn--yellow{width:100%}}@media screen and (max-width:480px){.section--landing-hero{padding-top:70px;padding-bottom:70px}.landing-hero__title{font-size:73px;line-height:73px}}@media screen and (max-width:1024px){section.landing-hero-image{background-size:auto 70%}}.column__content--right,section.landing-hero-image{background-image:url(https://s85.cyber-folks.pl/error_pages_images/403.png)}@media(max-width:991px){section.landing-hero-image{background-image:unset}}@media(min-width:767px){.column__content--right{height:300px;background-size:auto 300px;background-repeat:no-repeat;background-position:right}}
+</style>
+<script type="text/javascript">
+  var userLang = navigator.language || navigator.userLanguage;
+  if (!(userLang == "pl" || userLang == "pl-PL")) {
+    document.getElementById("text_1").innerHTML = "Stop!";
+    document.getElementById("text_2").innerHTML = "You do not appear to be authorised to access these resources.<br>If you think you should have access to this site - contact the site administrator!";
+    document.getElementById("text_3").innerHTML = "Read more";
+    document.getElementById("text_4").innerHTML = "For more information about the 403 error, see the article <a href='https://cyberfolks.pl/pomoc/blad-403/' target='blank'>Origin of 403 errors</a> <br>Take a look at our help section where you will find many useful articles: <a href='https://cyberfolks.pl/pomoc/' target='blank'>help cyber_Folks</a> ";
+    document.getElementById("text_5").innerHTML = "Web hosting service provided by";
+    document.getElementById("text_6").innerHTML = "Error 403";
+    document.getElementsByTagName('title')[0].innerHTML = "Error 403";
+  }
+</script>
+  </body>
+</html>
