@@ -13,7 +13,7 @@
             <a href="webinfo/webinformation.html">More Information</a>
         </div>
         <div class="header-center">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="logo.jpg" alt="Logo" class="logo">
         </div>
         <div class="header-right">
             <a href="../account/account.php">My Account</a>
