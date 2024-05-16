@@ -8,6 +8,18 @@
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
+    <header class="header">
+        <div class="header-left">
+            <a href="webinfo/webinformation.html">More Information</a>
+        </div>
+        <div class="header-center">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="header-right">
+            <a href="../account/account.php">My Account</a>
+        </div>
+    </header>
+
     <div class="welcome-container">
         <div class="top-panel">
             <div class="button-container">

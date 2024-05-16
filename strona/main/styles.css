@@ -5,6 +5,30 @@ body {
     padding: 0;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header-center .logo {
+    max-height: 50px;
+}
+
 .welcome-container {
     max-width: 800px;
     margin: 50px auto;
