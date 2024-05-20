@@ -9,7 +9,7 @@
 <body>
     <div class="account-container">
         <div class="back-button-container">
-            <a href="javascript:history.back()" class="back-button">Back</a>
+            <a href="../main/welcome.php" class="back-button">Back</a>
         </div>
         <h2>My Account</h2>
         <form method="post" action="update_account.php">

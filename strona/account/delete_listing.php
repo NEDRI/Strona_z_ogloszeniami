@@ -19,9 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("i", $listing_id);
 
     if ($stmt->execute()) {
-        echo "Ogłoszenie usunięte pomyślnie.";
+        echo "Pass.";
+        header("Location:../main/welcome.php");
     } else {
-        echo "Błąd: " . $sql . "<br>" . $conn->error;
+        echo "error: " . $sql . "<br>" . $conn->error;
     }
 
     $stmt->close();

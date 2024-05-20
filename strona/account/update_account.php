@@ -21,9 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $phone_number, $password, $user_email);
 
     if ($stmt->execute()) {
-        echo "Dane zaktualizowane pomyślnie.";
+        echo "Pass.";
+        header("Location:../login/login.php");
     } else {
-        echo "Błąd: " . $sql . "<br>" . $conn->error;
+        echo "error: " . $sql . "<br>" . $conn->error;
     }
 
     $stmt->close();
