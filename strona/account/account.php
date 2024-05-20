@@ -14,7 +14,7 @@
         <h2>My Account</h2>
         <form method="post" action="update_account.php">
             <label for="phone_number">Phone Number:</label>
-            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number (e.g., 123-456-789)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+            <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number (e.g., 123-456-789)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
             
             <label for="password">New Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter new password or old" required>
