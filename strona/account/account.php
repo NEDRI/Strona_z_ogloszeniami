@@ -17,7 +17,7 @@
             <input type="text" id="phone_number" name="phone_number" placeholder="Enter your phone number (e.g., 123-456-789)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
             
             <label for="password">New Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter new password" required>
+            <input type="password" id="password" name="password" placeholder="Enter new password or old" required>
 
             <input type="submit" value="Update Details">
         </form>
