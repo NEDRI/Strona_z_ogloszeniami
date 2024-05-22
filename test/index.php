@@ -1,38 +1,23 @@
-<?php 
-session_start();
+<?php
+            $dbservername = "localhost";
+            $dbusername = "root";
+            $dbpassword = "";
+            $dbdatabase = "projekt";
 
+            $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbdatabase);
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "SELECT url AS image_url 
+                    FROM images ";
+                    
+                $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    if ($row['image_url']) {
+                        echo '<img class="grid-img" src="../strona/uploads/' . $row['image_url'] . '" alt="Advertisement photo">';
+                    }}}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <link rel="stylesheet" href="<?php session_start(); $_SESSION["motyw"] ?> ">
-    <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <input type="button" value="Start machine" />
-    </form>
-    <p>The machine is stopped.</p>
-    <script>
-    const button = document.querySelector("input");
-    const paragraph = document.querySelector("p");
-
-    button.addEventListener("click", updateButton);
-
-    function updateButton() {
-        if (button.value === "Start machine") {
-        button.value = "Stop machine";
-        paragraph.textContent = "The machine has started!";
-        <?php session_start(); $_SESSION["motyw"] = "stylesW.css"; ?>
-        } else {
-        button.value = "Start machine";
-        paragraph.textContent = "The machine is stopped.";
-        <?php session_start(); $_SESSION["motyw"] = "stylesB.css"; ?>
-        }
-    }
-    </script>
-</body>
-</html>
